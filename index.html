@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xiao Shi Jia | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+    <script src="script.js"></script>
 <body>
     <header>
         <nav>
@@ -19,13 +20,15 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Hi, I'm Shi Jia</h1>
+        <h1 class="glitch" data-text="Hi, I'm Shi Jia">Hi, I'm Shi Jia</h1>
         <p>A student currently studying in <strong>Nanyang Polytechnic</strong>.</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am currently pursuing a <strong>Diploma in Cybersecurity and Digital Forensics</strong>. Beyond my technical studies, I am a disciplined leader with experience in managing teams. I enjoy bridging the gap between complex technical problems and user-friendly solutions, whether it is through building web applications or designing data dashboards</p>
+        <div class="content-card">
+            <p>I am currently pursuing a <strong>Diploma in Cybersecurity and Digital Forensics</strong>. Beyond my technical studies, I am a disciplined leader with experience in managing teams. I enjoy bridging the gap between complex technical problems and user-friendly solutions, whether it is through building web applications or designing data dashboards.</p>
+        </div>
     </section>
 
     <section id="skills">
@@ -52,20 +55,102 @@
 
     <section id="projects">
         <h2>Projects</h2>
+
         <div class="project-card">
-            <h3>Food Connect</h3>
-            <p>A web application built with Flask and Jinja2 to encourage interaction between youth and seniors.</p>
+            <h3>Project: Food Connect (Web Development)</h3>
+            <p><strong>Role:</strong> Lead Developer</p>
+            
+            <h4>Project Overview</h4>
+            <p>Food Connect is an intergenerational web application designed to foster community engagement by allowing youth and seniors to share both traditional and modern recipes. The goal was to bridge the intergenerational divide while preserving cultural culinary heritage.</p>
+
+            <h4>Project Visuals & Demo</h4>
+            <div class="project-images">
+                <div class="visual-item">
+                    <img src="images/food-connect1.png" alt="Desktop Homepage" class="portfolio-img">
+                    <p class="img-caption">Event Landing Page</p>
+                </div>
+                
+                <div class="visual-item">
+                    <img src="images/food-connect2.png" alt="Mobile View" class="portfolio-img">
+                    <p class="img-caption">Event Details</p>
+                </div>
+
+                <div class="visual-item">
+                    <video autoplay loop muted playsinline class="portfolio-img">
+                        <source src="images/food-connect3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="img-caption"><strong>User Authentication:</strong> Demonstrating the secure sign-in process for user profiles.</p>
+                </div>
+
+                <div class="visual-item">
+                    <video autoplay loop muted playsinline class="portfolio-img">
+                        <source src="images/food-connect4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="img-caption"><strong>Event Interaction:</strong> Users can view details, join, or unjoin community cooking events in real-time.</p>
+                </div>
+            </div>
+            
+            <h4>Work Process</h4>
+            <ul>
+                <li><strong>Planning:</strong> Conducted user journey mapping to identify accessibility hurdles for seniors, resulting in a high-contrast UI and simplified navigation.</li>
+                <li><strong>Development:</strong> Engineered the backend using Python/Flask, implementing Jinja2 logic to dynamically serve recipe content based on user categories.</li>
+                <li><strong>Data Security:</strong> Developed a relational database schema in SQLite3 with password hashing to ensure secure and efficient member data storage.</li>
+            </ul>
+
+            <h4>Skills Applied</h4>
+            <p>Python, Flask, Jinja2, sqlite3, HTML, CSS, JavaScript.</p>
+
+            <h4>Results</h4>
+            <p>Delivered a fully functional intergenerational platform that bridges the digital gap. The final application successfully streamlined recipe sharing and community event management, ensuring accessibility for users aged 13 to 70+.</p>
         </div>
+
         <div class="project-card">
-            <h3>Cybersecurity Dashboard</h3>
-            <p>An interactive Power BI dashboard for analyzing security trends and system threats.</p>
+            <h3>Project: Foreign Bodies CCA Website (UX Design)</h3>
+            <p><strong>Role:</strong> Frontend Developer & UX Designer</p>
+            
+            <h4>Project Overview</h4>
+            <p>Digitalizing the administrative aspects of the Foreign Bodies CCA, creating a central hub for announcements, schedules, and a streamlined signup method.</p>
+
+            <h4>Project Visuals & Demo</h4>
+            <div class="project-images">
+                <div class="visual-item">
+                    <video autoplay loop muted playsinline class="portfolio-img">
+                        <source src="images/cca1.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption"><strong>Core Branding:</strong> A walkthrough of the "About Us" page, highlighting the CCA's mission and history.</p>
+                </div>
+
+                <div class="visual-item">
+                    <video autoplay loop muted playsinline class="portfolio-img">
+                        <source src="images/cca2.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption"><strong>User Interaction:</strong> Demonstrating the integrated sign-up form designed for high conversion and ease of use.</p>
+                </div>
+            </div>
+
+            <h4>Work Process</h4>
+            <ul>
+                <li><strong>UX Translation:</strong> Leveraged Figma wireframes to build a semantic HTML structure, ensuring the site is accessible to screen readers.</li>
+                <li><strong>Responsive Implementation:</strong> Applied CSS Flexbox and Media Queries to ensure a fluid layout across various screen resolutions.</li>
+                <li><strong>Testing:</strong> Performed cross-browser testing for consistent performance across Chrome, Safari, and Edge.</li>
+            </ul>
+
+            <h4>Skills Applied</h4>
+            <p>UX Design, HTML, CSS, JavaScript, Responsive Web Design.</p>
+
+            <h4>Results</h4>
+            <p>Successfully digitized the CCA's administrative flow. By centralizing schedules and sign-up methods, the website reduced communication delays and provided a professional digital storefront for student inquiries.</p>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p><strong>Phone:</strong> (65) 8772 8806 </p>
-        <p><strong>Email:</strong> <a href="mailto:xiaoshijia08@gmail.com">xiaoshijia08@gmail.com</a> </p>
+        <div class="content-card">
+            <p><strong>Phone:</strong> (65) 8772 8806 </p>
+            <p><strong>Email:</strong> <a href="mailto:xiaoshijia08@gmail.com">xiaoshijia08@gmail.com</a> </p>
+        </div>
     </section>
 
     <footer>

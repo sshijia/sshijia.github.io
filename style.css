@@ -1,22 +1,36 @@
+/* 1. Import futuristic Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap');
+
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Mono', monospace; 
     line-height: 1.6;
     margin: 0;
-    color: #e0e0e0; /* Light grey text for readability */
-    background-color: #121212; /* Deep dark background */
+    color: #e0e0e0;
+    background-color: #0a0b10; 
     scroll-behavior: smooth;
 }
 
-/* Header & Nav */
+/* Apply Orbitron to headers and Nav */
+h1, h2, h3, h4, nav a {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+h2, .hero h1 strong, #contact a, .project-card h3 {
+    color: #00d4ff; 
+}
+
+/* Header & Navigation */
 header {
-    background: #1f1f1f; /* Slightly lighter dark for the header */
+    background: rgba(16, 18, 27, 0.95);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #00b14f; /* Grab Green accent */
+    border-bottom: 2px solid #00d4ff;
+    backdrop-filter: blur(10px);
 }
 
 nav {
@@ -28,97 +42,139 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #00b14f; /* Green hover effect */
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff;
 }
 
-/* Section Styling */
+/* Scroll Reveal Animations */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections & Layout */
 section {
-    padding: 100px 20px 60px;
-    max-width: 900px;
-    margin: auto;
+    padding: 100px 20px;
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
 .hero {
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+    background: radial-gradient(circle at center, #1a1c2c 0%, #0a0b10 100%);
 }
 
-h1 {
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #00b14f; /* Grab Green for headings */
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
+/* Unified Card Style for Skills and Projects */
+.project-card, .content-card, .skill-item {
+    background: #161821;
+    padding: 30px;
     margin-bottom: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Skills Grid */
+.project-card:hover, .content-card:hover, .skill-item:hover {
+    border-color: #00d4ff;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+}
+
+section#about .content-card, 
+section#contact .content-card {
+    border-left: 4px solid #00d4ff;
+}
+
+/* Skills Container Grid */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    gap: 20px;
 }
 
-.skill-item {
-    background: #1f1f1f;
-    padding: 20px;
-    border-radius: 12px;
+/* Project Visuals Grid & Items */
+.project-images {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.visual-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+/* Uniform styling for Images AND Videos */
+.portfolio-img {
+    width: 100%;
+    height: 300px;      /* Slightly taller for better mobile view */
+    object-fit: contain; /* Prevents images/videos from being cut off */
+    background-color: #0d0f1a; /* Dark background to frame vertical videos nicely */
+    border-radius: 10px;
     border: 1px solid #333;
     transition: transform 0.3s ease;
+    display: block;
 }
 
-.skill-item:hover {
-    transform: translateY(-5px);
-    border-color: #00b14f;
+.visual-item:hover .portfolio-img {
+    border-color: #00d4ff;
+    transform: scale(1.02);
 }
 
-.skill-item h3 {
-    margin-top: 0;
-    color: #ffffff;
+.img-caption {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    margin-top: 12px;
+    padding-left: 10px;
+    border-left: 2px solid #00d4ff;
+    text-align: left;
+    min-height: 40px; 
 }
 
-/* Projects & Cards */
-.project-card {
-    background: #1f1f1f;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    border-left: 5px solid #00b14f;
+/* Glitch Effect */
+.glitch {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 #00d4ff, -0.025em -0.05em 0 #ff00c1, 0.025em 0.05em 0 #00ff00;
+    animation: glitch 500ms infinite;
 }
 
-.project-card h3 {
-    color: #ffffff;
-    margin-top: 0;
+@keyframes glitch {
+    0% { text-shadow: 0.05em 0 0 #00d4ff, -0.05em -0.025em 0 #ff00c1, -0.025em 0.05em 0 #00ff00; }
+    15% { text-shadow: -0.05em -0.025em 0 #00d4ff, 0.025em 0.025em 0 #ff00c1, -0.05em -0.05em 0 #00ff00; }
+    50% { text-shadow: 0.025em 0.05em 0 #00d4ff, 0.05em 0 0 #ff00c1, 0.05em -0.05em 0 #00ff00; }
+    100% { text-shadow: -0.025em 0 0 #00d4ff, -0.025em -0.025em 0 #ff00c1, -0.025em -0.05em 0 #00ff00; }
 }
 
-/* Contact Section */
-#contact p {
-    font-size: 1.1rem;
-}
-
-#contact a {
-    color: #00b14f;
-    text-decoration: none;
-}
-
-/* Footer */
 footer {
     text-align: center;
-    padding: 40px;
-    background: #121212;
+    padding: 40px 20px;
+    font-size: 0.9rem;
     color: #888;
-    border-top: 1px solid #333;
 }
