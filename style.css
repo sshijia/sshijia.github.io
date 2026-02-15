@@ -1,21 +1,22 @@
-
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
-    color: #333;
+    color: #e0e0e0; /* Light grey text for readability */
+    background-color: #121212; /* Deep dark background */
     scroll-behavior: smooth;
 }
 
 /* Header & Nav */
 header {
-    background: #333;
+    background: #1f1f1f; /* Slightly lighter dark for the header */
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid #00b14f; /* Grab Green accent */
 }
 
 nav {
@@ -23,60 +24,101 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00b14f; /* Green hover effect */
 }
 
 /* Section Styling */
 section {
-    padding: 80px 20px;
+    padding: 100px 20px 60px;
     max-width: 900px;
     margin: auto;
 }
 
 .hero {
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: #f4f4f4;
+    background: linear-gradient(180deg, #1f1f1f 0%, #121212 100%);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 h2 {
-    border-bottom: 2px solid #00b14f; /* Grab Green */
-    display: inline-block;
-    padding-bottom: 5px;
+    color: #00b14f; /* Grab Green for headings */
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 /* Skills Grid */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     margin-top: 20px;
 }
 
 .skill-item {
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
 }
 
-/* Projects & Contact */
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: #00b14f;
+}
+
+.skill-item h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* Projects & Cards */
 .project-card {
-    background: #e9f7ef;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+    background: #1f1f1f;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #00b14f;
 }
 
+.project-card h3 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Contact Section */
+#contact p {
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #00b14f;
+    text-decoration: none;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
+    padding: 40px;
+    background: #121212;
+    color: #888;
+    border-top: 1px solid #333;
 }
